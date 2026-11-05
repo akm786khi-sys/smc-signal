@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+html:root:root:root{--bg:#070a10;--cd:rgba(18,23,32,.72);--tx:#eef1f6;--mu:#98a2b3;--ac:#e8b73a;--gd:#2fd48a;--rd:#ff5d6c;--bd:rgba(255,255,255,.09);--hero:linear-gradient(145deg,rgba(60,46,12,.55),rgba(12,16,24,.8));color-scheme:dark}
+html body{background:radial-gradient(900px 500px at 85% -10%,rgba(232,183,58,.16),transparent 60%),radial-gradient(700px 500px at -10% 110%,rgba(47,212,138,.08),transparent 60%),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 44px),repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 44px),#070a10;background-attachment:fixed}
+html body .hero{background:var(--hero);border:1px solid rgba(232,183,58,.28);border-radius:22px;padding:26px 18px 22px;box-shadow:0 24px 60px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.07);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);position:relative;overflow:hidden}
+html body .hero::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,transparent,#e8b73a,transparent)}
+html body .brand{display:block;font-family:Orbitron,"Arial Black",Impact,sans-serif;font-weight:900;font-size:clamp(34px,12vw,52px);letter-spacing:5px;text-shadow:none;padding-bottom:6px;transform:perspective(520px) rotateX(16deg);filter:drop-shadow(0 1px 0 #a37606) drop-shadow(0 2px 0 #8a6305) drop-shadow(0 3px 0 #6f5004) drop-shadow(0 4px 0 #5a4003) drop-shadow(0 12px 14px rgba(0,0,0,.6))}
+html body .brand i{letter-spacing:3px;margin-left:8px}
+html body .tag{font-family:Orbitron,sans-serif;font-size:11px;letter-spacing:4px;margin-top:12px;color:var(--ac)}
+html body .hero p{line-height:1.6}
+#lock .tag{font-size:0;letter-spacing:0}
+#lock .tag::after{content:"PREMIUM TRADING SIGNALS";font-size:11px;letter-spacing:4px}
+#lock::after{content:"PRICE ACTION • SMC • ICT • FIBONACCI\A GOLD • SILVER • OIL • FOREX";white-space:pre;display:block;text-align:center;margin-top:22px;padding-top:14px;border-top:1px solid var(--bd);font-size:10px;letter-spacing:2px;line-height:2;color:var(--mu)}
+#app .hero::after{content:"11 STRATEGIES  •  15 MARKETS  •  NEWS ALERTS";display:block;margin-top:14px;padding-top:12px;border-top:1px solid var(--bd);font-size:10px;letter-spacing:2px;color:var(--ac)}
+@keyframes glow{0%,100%{box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 rgba(232,183,58,0)}50%{box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 42px rgba(232,183,58,.2)}}
+#lock{animation:glow 4s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){#lock{animation:none}}
+html body .card{background:var(--cd);border:1px solid var(--bd);border-radius:18px;padding:16px;box-shadow:0 12px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+html body .sig{border-left:0;position:relative;overflow:hidden}
+html body .sig::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gd);box-shadow:0 0 18px var(--gd)}
+html body .sig.s::before{background:var(--rd);box-shadow:0 0 18px var(--rd)}
+html body .sig.n::before{background:var(--ac);box-shadow:0 0 18px var(--ac)}
+html body label{letter-spacing:.6px;text-transform:uppercase;font-size:10.5px}
+html body .ch label{text-transform:none;letter-spacing:0;font-size:13px;background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:10px;padding:9px 10px}
+html body input,html body select{background:rgba(255,255,255,.05);border:1px solid var(--bd);border-radius:12px;padding:13px 12px;color:var(--tx);outline:none}
+html body input:focus,html body select:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(232,183,58,.18)}
+html body select option{background:#10141c;color:#eef1f6}
+html body input[type=checkbox]{accent-color:#e8b73a;width:18px;height:18px}
+html body button{background:linear-gradient(180deg,#ffe596 0%,#e8b73a 48%,#b8860b 100%);color:#1a1405;border:0;border-radius:14px;padding:15px;margin-top:16px;font-family:Orbitron,system-ui,sans-serif;font-weight:900;font-size:13px;letter-spacing:2px;text-transform:uppercase;box-shadow:0 5px 0 #6f5004,0 12px 20px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.55);transition:transform .08s,box-shadow .08s}
+html body button:active{transform:translateY(4px);box-shadow:0 1px 0 #6f5004,0 4px 8px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.4)}
+html body button:disabled{opacity:.55}
+html body .seg button{margin:0;background:rgba(255,255,255,.05);color:var(--mu);border:1px solid var(--bd);box-shadow:none;font-size:12px;letter-spacing:1px;padding:13px 8px;font-family:system-ui,sans-serif;font-weight:700;text-transform:none}
+html body .seg button.on{background:linear-gradient(180deg,#ffe596,#d9a520);color:#1a1405;border-color:transparent;box-shadow:0 3px 0 #6f5004,0 8px 16px rgba(0,0,0,.4)}
+html body .tg{border-radius:8px;padding:5px 14px;letter-spacing:1.5px;font-family:Orbitron,sans-serif;font-size:12px}
+html body .buy{background:linear-gradient(180deg,#43e5a0,#12a866);box-shadow:0 0 16px rgba(47,212,138,.45)}
+html body .sell{background:linear-gradient(180deg,#ff8591,#d93a4a);box-shadow:0 0 16px rgba(255,93,108,.45)}
+html body .gd{background:linear-gradient(180deg,#ffe596,#d9a520);border-radius:6px}
+html body .gr>div{background:rgba(255,255,255,.04);border:1px solid var(--bd);border-radius:10px;padding:8px 6px;text-align:center}
+html body .note{line-height:1.5}
