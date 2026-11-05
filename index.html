@@ -5,52 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ali FX</title>
 <style>
-:root{--bg:#f4f6fa;--cd:#fff;--tx:#12161c;--mu:#5d6673;--ac:#b8860b;--gd:#0a8f4e;--rd:#d12f3a;--bd:#dde1e7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0e13;--cd:#151a21;--tx:#e8ebf0;--mu:#8f98a5;--ac:#e8b73a;--gd:#3ccf85;--rd:#ff6b75;--bd:#232a34;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0b0e13;--cd:#151a21;--tx:#e8ebf0;--mu:#8f98a5;--ac:#e8b73a;--gd:#3ccf85;--rd:#ff6b75;--bd:#232a34;color-scheme:dark}
+:root{--bg:#f4f6fa;--cd:#fff;--tx:#12161c;--mu:#5d6673;--ac:#b8860b;--gd:#0a8f4e;--rd:#d12f3a;--bd:#dde1e7;--hero:linear-gradient(135deg,#fff7de,#f4f6fa);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0e13;--cd:#151a21;--tx:#e8ebf0;--mu:#8f98a5;--ac:#e8b73a;--gd:#3ccf85;--rd:#ff6b75;--bd:#232a34;--hero:linear-gradient(135deg,#2a2210,#0b0e13);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0e13;--cd:#151a21;--tx:#e8ebf0;--mu:#8f98a5;--ac:#e8b73a;--gd:#3ccf85;--rd:#ff6b75;--bd:#232a34;--hero:linear-gradient(135deg,#2a2210,#0b0e13);color-scheme:dark}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 main{max-width:560px;margin:0 auto;padding:14px}
-.logo{font-size:30px;font-weight:900;letter-spacing:1px;color:var(--ac);margin:2px 0}
-.logo small{display:block;font-size:12px;font-weight:500;color:var(--mu);letter-spacing:0}
+.hero{background:var(--hero);border:1px solid var(--bd);border-radius:16px;padding:18px 16px;margin-bottom:12px;text-align:center}
+.brand{font-size:46px;font-weight:900;letter-spacing:8px;line-height:1;background:linear-gradient(90deg,#f7dc7a,#c8960c 50%,#f7dc7a);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 30px rgba(232,183,58,.25)}
+.brand i{font-style:normal;letter-spacing:2px;margin-left:6px;-webkit-text-fill-color:var(--tx)}
+.tag{margin-top:6px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ac);font-weight:700}
+.hero p{margin:8px 0 0;font-size:13px;color:var(--mu)}
 .card{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:12px;margin-bottom:12px}
+.sig{border-left:4px solid var(--gd)}.sig.s{border-left-color:var(--rd)}.sig.n{border-left-color:var(--ac)}
 label{display:block;font-size:12px;color:var(--mu);margin-bottom:3px}
 input,select,button{font:inherit;border-radius:8px;border:1px solid var(--bd);padding:10px;background:var(--bg);color:var(--tx);width:100%}
-button{background:var(--ac);color:#111;border:0;font-weight:700;margin-top:10px}
+button{background:linear-gradient(90deg,#f7dc7a,#c8960c);color:#111;border:0;font-weight:800;margin-top:12px}
+button:disabled{opacity:.6}
 .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.seg button{margin:0;background:var(--bg);color:var(--mu);border:1px solid var(--bd)}
+.seg button{margin:0;background:var(--bg);color:var(--mu);border:1px solid var(--bd);font-weight:600}
 .seg button.on{background:var(--ac);color:#111;border-color:var(--ac)}
 .g{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
 .ch{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}
 .ch label{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--tx);margin:0}
 .ch input{width:auto}
 .note{font-size:12px;color:var(--mu);margin-top:6px}
-.err{color:var(--rd);font-size:13px;margin-top:6px}
-.h{display:flex;justify-content:space-between;align-items:center}
-.tag{padding:3px 10px;border-radius:6px;font-weight:800;color:#fff}
+.h{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tg{padding:3px 10px;border-radius:6px;font-weight:800;color:#fff}
 .buy{background:var(--gd)}.sell{background:var(--rd)}
+.gd{display:inline-block;padding:1px 7px;border-radius:5px;background:var(--ac);color:#111;font-size:11px;font-weight:800;margin-left:6px}
 .gr{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px;font-size:11px;color:var(--mu)}
 .gr b{display:block;font-size:13px;color:var(--tx)}
+.warn{color:var(--rd);font-weight:700;font-size:13px;margin-top:6px}
+.acc{font-weight:800}
 #app{display:none}
 </style>
 </head>
 <body>
 <main>
-<div id="lock" class="card" style="margin-top:12vh">
-  <div class="logo">ALI FX<small>Forex Signals</small></div>
-  <label id="lockLbl">Password</label>
+<div id="lock" class="hero" style="margin-top:10vh">
+  <div class="brand">ALI<i>FX</i></div><div class="tag">Login</div>
+  <label id="lockLbl" style="margin-top:14px;text-align:left">Password</label>
   <input id="pw" type="password">
   <button id="lockBtn">Login</button>
-  <div id="lockErr" class="err"></div>
+  <div id="lockErr" class="warn"></div>
 </div>
 <div id="app">
-  <div class="logo">ALI FX<small>Scalp + Intraday | Price Action, SMC, ICT</small></div>
+  <div class="hero">
+    <div class="brand">ALI<i>FX</i></div>
+    <div class="tag">Forex • Gold • Silver • Oil</div>
+    <p>Price Action, SMC, ICT aur Fibonacci ek saath. Scalping aur intraday signals, Entry/SL/TP ke saath, news ka alert, aur har setup ka asli past record.</p>
+  </div>
   <div class="card">
-    <div class="seg"><button id="m_scalp" class="on">⚡ Scalping</button><button id="m_intra">📈 Intraday (3-4 ghante)</button></div>
+    <div class="seg"><button id="m_scalp" class="on">⚡ Scalping</button><button id="m_intra">📈 Intraday</button></div>
     <div class="g">
-      <div><label>Pair</label><select id="pair"></select></div>
+      <div><label>Pair / Market</label><select id="pair"></select></div>
       <div><label>Timeframe</label><select id="tf"></select></div>
+      <div><label>Target</label><select id="tgt"><option value="acc">Zyada accuracy (chhota TP)</option><option value="bal" selected>Balanced</option><option value="rew">Zyada reward (bada TP)</option></select></div>
+      <div><label>Quality filter</label><select id="q"><option value="norm">Normal (zyada setups)</option><option value="strict" selected>Strict (kam, behtar)</option></select></div>
     </div>
     <label style="margin-top:10px">Strategies</label>
     <div class="ch" id="chips"></div>
@@ -59,8 +72,9 @@ button{background:var(--ac);color:#111;border:0;font-weight:700;margin-top:10px}
     <button id="go">Scan karo</button>
     <div id="msg" class="note"></div>
   </div>
+  <div id="news"></div>
   <div id="out"></div>
-  <div class="note">Signal tool hai, profit guarantee nahi. Pehle demo pe test karo. Past record spread ke bina ek andaza hai.</div>
+  <div class="note">Signal tool hai, profit guarantee nahi. Past accuracy ek andaza hai (spread ka sirf chhota hissa gina hai). Pehle demo pe test karo, aur news ke time trade se bacho.</div>
 </div>
 </main>
 <script>
@@ -72,20 +86,22 @@ $('lockBtn').onclick=async()=>{const p=$('pw').value;
   if(!stored){if(p.length<6){$('lockErr').textContent='Kam se kam 6 characters.';return}try{localStorage.setItem('smc_pw',await sha(p))}catch(e){}unlock()}
   else if(await sha(p)===stored)unlock();else $('lockErr').textContent='Galat password.'};
 $('pw').addEventListener('keydown',e=>{if(e.key==='Enter')$('lockBtn').click()});
-function unlock(){$('lock').style.display='none';$('app').style.display='block'}
+function unlock(){$('lock').style.display='none';$('app').style.display='block';loadNews().then(showNews)}
 /*P*/
-const PAIRS=['EUR/USD','GBP/USD','USD/JPY','USD/CHF','AUD/USD','NZD/USD','USD/CAD','EUR/GBP','EUR/JPY','GBP/JPY','AUD/JPY','EUR/AUD','XAU/USD'];
-const MODES={scalp:{tf:['1min','5min','15min'],k:1.2,r1:1,r2:2},intra:{tf:['15min','30min','1h','4h'],k:1.8,r1:1.5,r2:3}};
-const STR=[['eng','Engulfing (PA)'],['pin','Pin Bar (PA)'],['inb','Inside Bar (PA)'],['sweep','Liquidity Sweep (SMC)'],['fvg','FVG Retest (SMC/ICT)'],['ob','Order Block (SMC)'],['ict','ICT Kill Zone'],['pull','Trend Pullback']];
+const FX=['EUR/USD','GBP/USD','USD/JPY','USD/CHF','AUD/USD','NZD/USD','USD/CAD','EUR/GBP','EUR/JPY','GBP/JPY','AUD/JPY','EUR/AUD'],COM=['XAU/USD','XAG/USD','WTI/USD'];
+const MODES={scalp:{tf:['1min','5min','15min'],k:1.2},intra:{tf:['15min','30min','1h','4h'],k:1.8}};
+const TGT={acc:[.7,1.5],bal:[1,2],rew:[1.5,3]};
+const STR=[['eng','Engulfing (PA)'],['pin','Pin Bar (PA)'],['inb','Inside Bar (PA)'],['sweep','Liquidity Sweep (SMC)'],['fvg','FVG Retest (SMC/ICT)'],['ob','Order Block (SMC)'],['bos','BOS Retest (SMC)'],['ict','ICT Kill Zone'],['fib','Fibonacci OTE'],['pull','Trend Pullback'],['rsi','RSI Reversal']];
 function ema(a,n){const k=2/(n+1),o=[a[0]];for(let i=1;i<a.length;i++)o.push(a[i]*k+o[i-1]*(1-k));return o}
+function rsiC(c,n=14){const o=new Array(c.length).fill(50);let g=0,l=0;for(let i=1;i<c.length;i++){const d=c[i]-c[i-1],u=Math.max(d,0),w=Math.max(-d,0);if(i<=n){g+=u/n;l+=w/n;if(i==n)o[i]=l?100-100/(1+g/l):100}else{g=(g*(n-1)+u)/n;l=(l*(n-1)+w)/n;o[i]=l?100-100/(1+g/l):100}}return o}
 function mn(x,a,b){let m=1e18;for(let j=a;j<=b;j++)m=Math.min(m,x[j]);return m}
 function prep(v){
   const o=v.map(x=>+x.open),h=v.map(x=>+x.high),l=v.map(x=>+x.low),c=v.map(x=>+x.close),n=c.length,a=new Array(n).fill(0),t=[0];
   for(let i=1;i<n;i++){t[i]=Math.max(h[i]-l[i],Math.abs(h[i]-c[i-1]),Math.abs(l[i]-c[i-1]));if(i>=14){let s=0;for(let j=i-13;j<=i;j++)s+=t[j];a[i]=s/14}}
-  const hr=v.map(x=>+x.datetime.slice(11,13)),e20=ema(c,20),e50=ema(c,50),ng=z=>z.map(x=>-x);
-  return[{o,h,l,c,a,e20,e50,hr},{o:ng(o),h:ng(l),l:ng(h),c:ng(c),a,e20:ng(e20),e50:ng(e50),hr}];
+  const hr=v.map(x=>+x.datetime.slice(11,13)),e20=ema(c,20),e50=ema(c,50),rs=rsiC(c),ng=z=>z.map(x=>-x);
+  return[{o,h,l,c,a,e20,e50,hr,rs},{o:ng(o),h:ng(l),l:ng(h),c:ng(c),a,e20:ng(e20),e50:ng(e50),hr,rs:rs.map(x=>100-x)}];
 }
-// sab strategies sirf BUY ke liye likhi hain; SELL ke liye price ulta (mirror) karke chalate hain
+// strategies sirf BUY ke liye hain; SELL ke liye price ulta (mirror) karke chalate hain
 const S={
 eng:(D,i)=>{const{o,l,c,a}=D;if(c[i-1]<o[i-1]&&c[i]>o[i-1]&&o[i]<=c[i-1]&&c[i]>o[i]&&l[i]<=mn(l,i-10,i-1)+.3*a[i])return{e:c[i],sl:l[i]-.1*a[i]}},
 pin:(D,i)=>{const{o,h,l,c,a}=D,b=Math.abs(c[i]-o[i]),w=Math.min(o[i],c[i])-l[i],r=h[i]-l[i];if(r>0&&w>=2*b&&w>=.55*r&&l[i]<=mn(l,i-8,i-1))return{e:c[i],sl:l[i]-.1*a[i]}},
@@ -94,37 +110,60 @@ sweep:(D,i)=>{const{o,l,c,a}=D,s=mn(l,i-12,i-2);if(l[i]<s&&c[i]>s&&c[i]>o[i])ret
 ict:(D,i)=>{const h=D.hr[i];if((h>=7&&h<10)||(h>=12&&h<15))return S.sweep(D,i)},
 fvg:(D,i)=>{const{o,h,l,c,a,e50}=D;if(c[i]<=e50[i])return;for(let k=i-2;k>=i-10;k--)if(l[k]>h[k-2]&&l[k]-h[k-2]>=.2*a[i]){if(l[i]<=l[k]&&c[i]>h[k-2]&&c[i]>o[i])return{e:c[i],sl:h[k-2]-.15*a[i]};return}},
 ob:(D,i)=>{const{o,h,l,c,a}=D;for(let k=i-3;k>=i-15;k--)if(o[k]>c[k]&&c[k+1]-o[k+1]>1.2*a[i]&&c[k+1]>h[k]){if(l[i]<=h[k]&&c[i]>o[i]&&c[i]>l[k])return{e:c[i],sl:l[k]-.1*a[i]};return}},
-pull:(D,i)=>{const{o,l,c,a,e20,e50}=D;if(e20[i]>e50[i]&&e20[i]>e20[i-5]&&l[i]<=e20[i]&&c[i]>e20[i]&&c[i]>o[i])return{e:c[i],sl:Math.min(l[i],l[i-1])-.1*a[i]}}
+bos:(D,i)=>{const{o,h,l,c,a}=D;let m=-1e18,br=false;for(let j=i-20;j<=i-6;j++)m=Math.max(m,h[j]);for(let j=i-5;j<i;j++)if(c[j]>m)br=true;if(br&&l[i]<=m+.1*a[i]&&c[i]>m&&c[i]>o[i])return{e:c[i],sl:Math.min(l[i],m-.3*a[i])-.1*a[i]}},
+fib:(D,i)=>{const{o,h,l,c,a}=D;let H=i-40,L=i-40;for(let j=i-40;j<i;j++){if(h[j]>=h[H])H=j;if(l[j]<=l[L])L=j}const g=h[H]-l[L];if(L<H&&i-H>=2&&g>=2.5*a[i]){const z1=h[H]-.5*g,z2=h[H]-.786*g;if(l[i]<=z1&&l[i]>=z2-.2*a[i]&&c[i]>o[i]&&c[i]>z2)return{e:c[i],sl:z2-.3*a[i]}}},
+pull:(D,i)=>{const{o,l,c,a,e20,e50}=D;if(e20[i]>e50[i]&&e20[i]>e20[i-5]&&l[i]<=e20[i]&&c[i]>e20[i]&&c[i]>o[i])return{e:c[i],sl:Math.min(l[i],l[i-1])-.1*a[i]}},
+rsi:(D,i)=>{const{o,l,c,a,rs}=D;if(rs[i-1]<30&&rs[i]>rs[i-1]&&c[i]>o[i])return{e:c[i],sl:Math.min(l[i],l[i-1])-.1*a[i]}}
 };
-function sig(D,i,id,P){
-  const a=D.a[i];if(!(a>0))return null;const r=S[id](D,i);if(!r)return null;
-  let risk=r.e-r.sl;if(!(risk>0))return null;
-  risk=Math.min(Math.max(risk,.5*a),P.k*a);return{e:r.e,sl:r.e-risk,risk};
+function evalAt(X,i,ids,P,Q){
+  const a=X.a[i];if(!(a>0)||!(X.c[i]>X.e50[i]))return null;
+  const hr=X.hr[i],ses=hr>=7&&hr<20;
+  if(Q=='strict'&&!(X.e20[i]>X.e50[i]&&X.e50[i]>X.e50[i-10]&&ses&&X.rs[i]<70))return null;
+  const f=[];let risk=1e18;
+  for(const id of ids){const r=S[id](X,i);if(!r)continue;const k=r.e-r.sl;if(k>0){f.push(id);risk=Math.min(risk,k)}}
+  if(!f.length||(Q=='strict'&&f.length<2))return null;
+  risk=Math.min(Math.max(risk,.5*a),P.k*a);
+  return{f,e:X.c[i],sl:X.c[i]-risk,risk,sc:f.length+(ses?1:0)+1};
 }
-function bt(D,id,P){
-  const n=D.c.length,R=[];
+function bt(X,ids,P,Q,r1){
+  const n=X.c.length,R=[];
   for(let i=60;i<n-1;i++){
-    const s=sig(D,i,id,P);if(!s)continue;const tp=s.e+P.r1*s.risk;let r=null;
-    for(let j=i+1;j<Math.min(n,i+41);j++){if(D.l[j]<=s.sl){r=-1;break}if(D.h[j]>=tp){r=P.r1;break}}
+    const s=evalAt(X,i,ids,P,Q);if(!s)continue;const tp=s.e+r1*s.risk;let r=null;
+    for(let j=i+1;j<Math.min(n,i+41);j++){if(X.l[j]<=s.sl){r=-1;break}if(X.h[j]>=tp){r=r1;break}}
     if(r!==null){R.push(r-.05);i+=3}
   }
   return R;
 }
-function analyze(v,P,ids){
-  const[B,M]=prep(v),n=v.length,out=[];
-  for(const id of ids){
-    const R=bt(B,id,P).concat(bt(M,id,P));
-    const st={n:R.length,win:R.length?R.filter(x=>x>0).length/R.length:0,avg:R.length?R.reduce((a,b)=>a+b,0)/R.length:0};
-    for(const[X,d]of[[B,'BUY'],[M,'SELL']]){
-      const s=sig(X,n-1,id,P);if(!s)continue;const q=d=='BUY'?1:-1;
-      out.push({id,dir:d,e:q*s.e,sl:q*s.sl,tp1:q*(s.e+P.r1*s.risk),tp2:q*(s.e+P.r2*s.risk),...st});
-    }
+function analyze(v,P,ids,Q,t){
+  const[r1,r2]=t,[B,M]=prep(v),n=v.length,R=bt(B,ids,P,Q,r1).concat(bt(M,ids,P,Q,r1));
+  const st={n:R.length,win:R.length?R.filter(x=>x>0).length/R.length:0,avg:R.length?R.reduce((a,b)=>a+b,0)/R.length:0},sigs=[];
+  for(const[X,d]of[[B,'BUY'],[M,'SELL']]){
+    const s=evalAt(X,n-1,ids,P,Q);if(!s)continue;const q=d=='BUY'?1:-1;
+    sigs.push({dir:d,f:s.f,sc:s.sc,e:q*s.e,sl:q*s.sl,tp1:q*(s.e+r1*s.risk),tp2:q*(s.e+r2*s.risk),r1,r2});
   }
-  return out;
+  return{st,sigs};
 }
 /*E*/
+// ---- News (Forex Factory free feed) ----
+let NEWS=null;
+async function loadNews(){
+  try{const c=JSON.parse(localStorage.getItem('ffn')||'null');if(c&&Date.now()-c.t<1800000){NEWS=c.d;return}}catch(e){}
+  try{const r=await fetch('https://nfs.faireconomy.media/ff_calendar_thisweek.json');const d=await r.json();
+    NEWS=d.filter(x=>x.impact==='High').map(x=>({t:new Date(x.date).getTime(),c:x.country,n:x.title,f:x.forecast,p:x.previous}));
+    try{localStorage.setItem('ffn',JSON.stringify({t:Date.now(),d:NEWS}))}catch(e){}}catch(e){NEWS=null}
+}
+const curs=p=>/^(XAU|XAG|WTI)/.test(p)?['USD']:p.split('/');
+const newsFor=p=>(NEWS||[]).filter(x=>curs(p).includes(x.c)||(p.startsWith('WTI')&&/crude|oil/i.test(x.n)));
+const tm=t=>new Date(t).toLocaleString([],{weekday:'short',hour:'2-digit',minute:'2-digit'});
+function showNews(){
+  if(!NEWS){$('news').innerHTML='<div class="card note">📰 News feed load nahi hui. Trade se pehle forexfactory.com/calendar pe high-impact news check kar lo.</div>';return}
+  const now=Date.now(),L=NEWS.filter(x=>x.t>now-1800000).sort((a,b)=>a.t-b.t).slice(0,6);
+  $('news').innerHTML='<div class="card"><b>📰 Aane wali High-impact news</b><div class="note">Aapke phone ke time mein</div>'+(L.length?L.map(x=>`<div class="note" style="color:var(--tx)">${tm(x.t)} · <b>${x.c}</b> ${x.n}${x.f||x.p?` <span style="color:var(--mu)">(forecast ${x.f||'-'}, pichla ${x.p||'-'})</span>`:''}</div>`).join(''):'<div class="note">Is hafte aur koi high-impact news nahi.</div>')+'</div>';
+}
+// ---- UI ----
 let mode='scalp';
-PAIRS.forEach(p=>$('pair').add(new Option(p)));$('pair').add(new Option('Sab pairs (scan)','ALL'),0);$('pair').value='EUR/USD';
+$('pair').add(new Option('Sab Forex pairs','ALLFX'));$('pair').add(new Option('Gold + Silver + Oil','ALLCOM'));$('pair').add(new Option('Sab kuch (scan)','ALL'));
+FX.concat(COM).forEach(p=>$('pair').add(new Option(p)));$('pair').value='EUR/USD';
 STR.forEach(s=>$('chips').insertAdjacentHTML('beforeend',`<label><input type="checkbox" id="c_${s[0]}" checked> ${s[1]}</label>`));
 function setMode(m){mode=m;$('m_scalp').className=m=='scalp'?'on':'';$('m_intra').className=m=='intra'?'on':'';
   $('tf').innerHTML='';$('tf').add(new Option('Sab timeframes','ALL'));MODES[m].tf.forEach(t=>$('tf').add(new Option(t)));$('tf').value='ALL'}
@@ -134,36 +173,50 @@ let busy=false;
 $('go').onclick=async()=>{
   if(busy)return;const key=$('key').value.trim();if(!key){$('msg').textContent='Pehle API key daalo.';return}
   try{localStorage.setItem('smc_key',key)}catch(e){}
-  const P=MODES[mode],pairs=$('pair').value=='ALL'?PAIRS:[$('pair').value],tfs=$('tf').value=='ALL'?P.tf:[$('tf').value];
+  const P=MODES[mode],t=TGT[$('tgt').value],Q=$('q').value,pv=$('pair').value;
+  const pairs=pv=='ALLFX'?FX:pv=='ALLCOM'?COM:pv=='ALL'?FX.concat(COM):[pv],tfs=$('tf').value=='ALL'?P.tf:[$('tf').value];
   const ids=STR.map(s=>s[0]).filter(id=>$('c_'+id).checked);if(!ids.length){$('msg').textContent='Kam se kam ek strategy chuno.';return}
-  const jobs=[];pairs.forEach(p=>tfs.forEach(t=>jobs.push([p,t])));
-  busy=true;$('go').disabled=true;let res=[],err='';
+  const jobs=[];pairs.forEach(p=>tfs.forEach(x=>jobs.push([p,x])));
+  busy=true;$('go').disabled=true;await loadNews();showNews();
+  const res=[],skip=[],seen={};let fatal='';
   for(let q=0;q<jobs.length;q++){
-    $('msg').textContent=`Scan ${q+1}/${jobs.length}: ${jobs[q][0]} ${jobs[q][1]} (free key limit ke liye thoda wait lagta hai)`;
+    $('msg').textContent=`Scan ${q+1}/${jobs.length}: ${jobs[q][0]} ${jobs[q][1]} (free key ki limit ke liye wait lagta hai)`;
     if(q)await sleep(7600);
     try{
       const u=`https://api.twelvedata.com/time_series?symbol=${encodeURIComponent(jobs[q][0])}&interval=${jobs[q][1]}&outputsize=1000&order=ASC&timezone=UTC&apikey=${encodeURIComponent(key)}`;
       const r=await (await fetch(u)).json();
-      if(r.status==='error'||!r.values)throw Error(r.message||'Data nahi mila');
+      if(r.status==='error'||!r.values){const m=r.message||'Data nahi mila';if(/api ?key|credits|limit/i.test(m)){fatal=m;break}throw Error(m)}
       const v=r.values.slice(0,-1);if(v.length<150)throw Error('Kam candles');
-      analyze(v,P,ids).forEach(x=>res.push({...x,pair:jobs[q][0],tf:jobs[q][1]}));
-    }catch(e){err=jobs[q][0]+' '+jobs[q][1]+': '+e.message;break}
-    show(res,P);
+      const a=analyze(v,P,ids,Q,t);
+      a.sigs.forEach(s=>res.push({...s,st:a.st,pair:jobs[q][0],tf:jobs[q][1]}));
+      const nx=newsFor(jobs[q][0]).filter(x=>x.t>Date.now()&&x.t-Date.now()<5400000).sort((x,y)=>x.t-y.t)[0];
+      if(nx&&!seen[jobs[q][0]]){seen[jobs[q][0]]=1;const w=v.slice(-12),hi=Math.max(...w.map(x=>+x.high)),lo=Math.min(...w.map(x=>+x.low)),at=prep(v)[0].a[v.length-1];res.push({news:nx,pair:jobs[q][0],tf:jobs[q][1],hi,lo,at})}
+    }catch(e){skip.push(jobs[q][0]+' '+jobs[q][1])}
+    show(res,t);
   }
-  show(res,P);$('msg').textContent=err?('Error: '+err):'Scan poora hua.';busy=false;$('go').disabled=false;
+  show(res,t);busy=false;$('go').disabled=false;
+  $('msg').textContent=fatal?('Error: '+fatal):'Scan poora hua.'+(skip.length?' Skip hue (data/plan nahi): '+[...new Set(skip)].slice(0,6).join(', '):'');
 };
-function show(res,P){
-  const only=$('prof').checked;
-  let L=res.map(x=>({...x,ok:x.n>=15&&x.avg>0}));if(only)L=L.filter(x=>x.ok);
-  L.sort((a,b)=>b.avg-a.avg);
-  if(!L.length){$('out').innerHTML='<div class="card">Abhi koi setup nahi. Thodi der baad dubara scan karo, ya "profitable" filter band karke dekho.</div>';return}
-  const nm=Object.fromEntries(STR);
-  $('out').innerHTML=L.map(x=>{const d=x.pair.includes('JPY')?3:x.pair.startsWith('XAU')?2:5,f=z=>z.toFixed(d);
-    return`<div class="card"><div class="h"><b>${x.pair} · ${x.tf}</b><span class="tag ${x.dir=='BUY'?'buy':'sell'}">${x.dir}</span></div>
-    <div class="note" style="margin-top:2px">${nm[x.id]}</div>
-    <div class="gr"><div>Entry<b>${f(x.e)}</b></div><div>SL<b>${f(x.sl)}</b></div><div>TP1 (${P.r1}R)<b>${f(x.tp1)}</b></div><div>TP2 (${P.r2}R)<b>${f(x.tp2)}</b></div></div>
-    <div class="note">Past record: ${x.n} trades, win ${(x.win*100).toFixed(0)}%, avg ${x.avg>=0?'+':''}${x.avg.toFixed(2)}R ${x.ok?'':'(kamzor)'}</div></div>`}).join('');
+const gr=x=>x.sc>=5?'A+':x.sc>=4?'A':'B';
+function show(res,t){
+  const only=$('prof').checked,now=Date.now();
+  const S1=res.filter(x=>!x.news).map(x=>({...x,ok:x.st.n>=15&&x.st.avg>0})).filter(x=>!only||x.ok).sort((a,b)=>b.sc-a.sc||b.st.avg-a.st.avg);
+  const N1=res.filter(x=>x.news);
+  if(!S1.length&&!N1.length){$('out').innerHTML='<div class="card">Abhi koi setup nahi. Thodi der baad scan karo, Normal filter ya "profitable" filter band karke dekho.</div>';return}
+  const nm=Object.fromEntries(STR),dc=p=>/JPY/.test(p)?3:/^XAU|^WTI/.test(p)?2:/^XAG/.test(p)?3:5;
+  const h1=N1.map(x=>{const d=dc(x.pair),f=z=>z.toFixed(d),pad=.1*x.at,rg=x.hi-x.lo;
+    return`<div class="card sig n"><div class="h"><b>📰 ${x.pair} · News Straddle</b><span class="gd">${Math.max(0,Math.round((x.news.t-now)/60000))} min</span></div>
+    <div class="note" style="color:var(--tx)">${x.news.c} ${x.news.n} (${tm(x.news.t)})${x.news.f?` · forecast ${x.news.f}, pichla ${x.news.p||'-'}`:''}</div>
+    <div class="gr"><div>Buy Stop<b>${f(x.hi+pad)}</b></div><div>Sell Stop<b>${f(x.lo-pad)}</b></div><div>SL (opp.)<b>${f(x.lo-pad)}/${f(x.hi+pad)}</b></div><div>TP (1.5R)<b>${f(1.5*rg)}</b></div></div>
+    <div class="warn">Risky: news pe spread aur slippage bohot badhte hain, aksar fake move aata hai. Sirf chhoti lot se, ya trade mat lo.</div></div>`}).join('');
+  const h2=S1.map(x=>{const d=dc(x.pair),f=z=>z.toFixed(d),B=x.dir=='BUY',nw=newsFor(x.pair),nr=nw.find(y=>Math.abs(y.t-now)<=1800000),nx=nw.filter(y=>y.t>now).sort((a,b)=>a.t-b.t)[0];
+    return`<div class="card sig ${B?'':'s'}"><div class="h"><b>${x.pair} · ${x.tf}<span class="gd">${gr(x)}</span></b><span class="tg ${B?'buy':'sell'}">${x.dir}</span></div>
+    <div class="note" style="color:var(--tx)">${x.f.map(i=>nm[i]).join(' + ')}</div>
+    <div class="gr"><div>Entry<b>${f(x.e)}</b></div><div>SL<b>${f(x.sl)}</b></div><div>TP1 (${x.r1}R)<b>${f(x.tp1)}</b></div><div>TP2 (${x.r2}R)<b>${f(x.tp2)}</b></div></div>
+    <div class="note">Past accuracy: <span class="acc" style="color:var(--${x.ok?'gd':'rd'})">${(x.st.win*100).toFixed(0)}%</span> (${x.st.n} trades) · avg ${x.st.avg>=0?'+':''}${x.st.avg.toFixed(2)}R ${x.ok?'':'(kamzor)'}</div>
+    ${nr?'<div class="warn">⚠ News abhi: '+nr.c+' '+nr.n+'. Trade mat lo.</div>':nx&&nx.t-now<7200000?'<div class="note">News '+Math.round((nx.t-now)/60000)+' min mein: '+nx.c+' '+nx.n+(nx.f?' (forecast '+nx.f+', pichla '+(nx.p||'-')+')':'')+'</div>':''}</div>`}).join('');
+  $('out').innerHTML=h1+h2;
 }
 </script>
 </body>
-</html>
+                                               </html>
